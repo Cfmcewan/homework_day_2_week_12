@@ -29,10 +29,11 @@ public class ThemeParkTest {
     public void before(){
         playground = new Playground("Play Place");
         park = new Park("The Green");
-        rollercoaster = new Rollercoaster("The Big One");
-        dodgems = new Dodgems("Dodge");
-        tabaccoStall = new TabaccoStall ("Smokes", "Sol", "B20");
-        iceCreamStall = new IceCreamStall("Ice", "Sally", "C20");
+        rollercoaster = new Rollercoaster("The Big One", 8.40);
+        dodgems = new Dodgems("Dodge", 4.50);
+        tabaccoStall = new TabaccoStall ("Smokes", "Sol", "B20", 6.60);
+        iceCreamStall = new IceCreamStall("Ice", "Sally", "C20", 2.80);
+        candyFlossStall = new CandyFlossStall("Candy", "Bob", "G20", 4.20);
         visitor = new Visitor(20, 160, 30.00);
         themePark = new ThemePark(rollercoaster, park, playground, candyFlossStall, iceCreamStall, tabaccoStall, dodgems);
     }

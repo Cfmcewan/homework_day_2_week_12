@@ -1,10 +1,40 @@
 package ThemePark.Features.StallFun;
 
-public class IceCreamStall extends ThemePark.Features.Stall{
+import ThemePark.Features.IReviewed;
+import ThemePark.Features.ITicketed;
+import ThemePark.Visitor;
 
-    public IceCreamStall(String name, String ownerName, String parkingSpot) {
+public class IceCreamStall extends ThemePark.Features.Stall implements IReviewed, ITicketed {
+
+    private int rating;
+    private Double price;
+
+    public IceCreamStall(String name, String ownerName, String parkingSpot, int rating) {
         super(name, ownerName, parkingSpot);
+        this.rating = rating;
+        this.price = 2.80;
+
+    }
+
+    public Double priceFor() {
+        return price;
     }
 
 
+    public Double isAllowed(Visitor visitor) {
+        if (visitor.getMoney() > price) {
+            return visitor.getMoney() - price;
+        } else return visitor.getMoney();
+    }
+
+
+    public int getRating() {
+        return rating;
+    }
+
+    public String getName(){
+        return super.getName();
+    }
+
 }
+

@@ -6,10 +6,12 @@ public abstract class Stall {
     private String ownerName;
     private String parkingSpot;
 
+
     public Stall(String name, String ownerName, String parkingSpot){
         this.name = name;
         this.ownerName = ownerName;
         this.parkingSpot = parkingSpot;
+
     }
 
     public String getName() {
@@ -23,4 +25,6 @@ public abstract class Stall {
     public String getParkingSpot() {
         return parkingSpot;
     }
-}
+
+    }
+

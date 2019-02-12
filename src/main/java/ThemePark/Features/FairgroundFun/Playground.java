@@ -1,10 +1,31 @@
 package ThemePark.Features.FairgroundFun;
 
-public class Playground extends ThemePark.Features.Attraction {
+import ThemePark.Features.FairgroundFun.ISecurity;
+import ThemePark.Visitor;
 
-    public Playground(String name){
+
+public class Playground extends ThemePark.Features.Attraction implements ISecurity {
+
+    private int rating;
+
+    public Playground(String name, int rating){
         super(name);
+        this.rating = rating;
     }
 
+    public Boolean isAllowedTo(Visitor visitor){
+        if(visitor.getAge() < 15){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    public int getRating() {
+        return rating;
+    }
+
+    public String getName(){
+        return super.getName();
+    }
 }
