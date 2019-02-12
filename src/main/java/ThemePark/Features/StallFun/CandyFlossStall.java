@@ -19,14 +19,20 @@ public class CandyFlossStall extends ThemePark.Features.Stall implements ITicket
         return price;
     }
 
-    public Double isAllowed(Visitor visitor) {
-        if (visitor.getMoney() > price) {
-            return visitor.getMoney() -= price;
-        } else {
-            return visitor.getMoney();
-        }
+   public Double priceFor(Visitor visitor){
+       if (visitor.getMoney() > price) {
+           return visitor.getMoney() - price;
+       } else return visitor.getMoney();
+   }
+
+   public int getRating(){
+        return rating;
+
     }
 
+    public String getName(){
+        return super.getName();
+    }
 
 
 

@@ -2,9 +2,10 @@ package ThemePark.Features.StallFun;
 
 import ThemePark.Features.FairgroundFun.ISecurity;
 import ThemePark.Features.IReviewed;
+import ThemePark.Features.ITicketed;
 import ThemePark.Visitor;
 
-public class TabaccoStall extends ThemePark.Features.Stall implements ISecurity, IReviewed {
+public class TabaccoStall extends ThemePark.Features.Stall implements ISecurity, IReviewed, ITicketed {
 
     private int rating;
     private Double price;
@@ -34,4 +35,12 @@ public class TabaccoStall extends ThemePark.Features.Stall implements ISecurity,
     public String getName(){
         return super.getName();
     }
+
+    public Double priceFor(Visitor visitor){
+        if (visitor.getMoney() > price) {
+            return visitor.getMoney() - price;
+        } else return visitor.getMoney();
+    }
 }
+
+

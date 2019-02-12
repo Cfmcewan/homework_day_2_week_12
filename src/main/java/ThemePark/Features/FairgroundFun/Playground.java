@@ -1,10 +1,11 @@
 package ThemePark.Features.FairgroundFun;
 
 import ThemePark.Features.FairgroundFun.ISecurity;
+import ThemePark.Features.IReviewed;
 import ThemePark.Visitor;
 
 
-public class Playground extends ThemePark.Features.Attraction implements ISecurity {
+public class Playground extends ThemePark.Features.Attraction implements ISecurity, IReviewed {
 
     private int rating;
 

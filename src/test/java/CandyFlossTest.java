@@ -38,8 +38,8 @@ public class CandyFlossTest {
     }
 
     @Test
-    public void hasIsAllowed(){
-        assertEquals(4.20, candyFlossStall.isAllowed(visitor), 0.01);
+    public void canGetPriceFor(){
+        assertEquals(25.80, candyFlossStall.priceFor(visitor), 0.01);
     }
 
 }

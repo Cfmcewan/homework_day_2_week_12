@@ -10,14 +10,16 @@ public class TabaccoStallTest{
     TabaccoStall tabaccoStall;
     Visitor visitor;
     Visitor visitor2;
+    Visitor visitor3;
 
 
 
     @Before
     public void before(){
         tabaccoStall = new TabaccoStall ("Smokes", "Sol", "B20", 4);
-        visitor = new Visitor(14, 160, 30.00);
-        visitor2 = new Visitor(20, 160, 30.00);
+        visitor = new Visitor(14, 160, 1.00);
+        visitor2 = new Visitor(20, 160, 2.00);
+        visitor3 = new Visitor(20, 160, 30.00);
     }
 
     @Test
@@ -55,6 +57,10 @@ public class TabaccoStallTest{
         assertEquals(4, tabaccoStall.getRating());
     }
 
+    @Test
+    public void canGetPriceForVisitor(){
+        assertEquals(23.4, tabaccoStall.priceFor(visitor3), 0.01);
+    }
 
 
 }

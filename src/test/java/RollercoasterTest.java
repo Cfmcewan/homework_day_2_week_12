@@ -15,7 +15,7 @@ public class RollercoasterTest {
 
     @Before
     public void before(){
-        rollercoaster = new Rollercoaster("The Big One", 8.40, 10);
+        rollercoaster = new Rollercoaster("The Big One", 8);
         visitor = new Visitor(11, 130, 30.00);
         visitor2 = new Visitor(20, 160, 30.00);
         visitor3 = new Visitor(20, 210, 30.00);
@@ -55,7 +55,7 @@ public class RollercoasterTest {
 
     @Test
     public void canGetRating(){
-        assertEquals(10, rollercoaster.getRating());
+        assertEquals(8, rollercoaster.getRating());
     }
 
 }

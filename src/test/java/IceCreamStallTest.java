@@ -14,7 +14,7 @@ public class IceCreamStallTest{
 
     @Before
     public void before(){
-        iceCreamStall = new IceCreamStall("Ice", "Sally", "C20");
+        iceCreamStall = new IceCreamStall("Ice", "Sally", "C20", 6);
         visitor = new Visitor(11, 130, 1.50);
         visitor2 = new Visitor(15, 130, 30.00);
     }
@@ -35,17 +35,20 @@ public class IceCreamStallTest{
     }
 
     @Test
-    public void canGetPrice(){
-        assertEquals(2.80, iceCreamStall.priceFor(), 0.01);
+    public void canGetDefaultPrice(){
+        assertEquals(2.80, iceCreamStall.defaultPrice(), 0.01);
     }
 
-    @Test void canGetIsAllowed(){
-        assertEquals(27.20, iceCreamStall.isAllowed(visitor2), 0.01);
+    @Test
+    public void canGetPriceFor(){
+        assertEquals(27.20, iceCreamStall.priceFor(visitor2), 0.01);
     }
+
 
     @Test
     public void canGetRating(){
         assertEquals(6, iceCreamStall.getRating());
     }
+
 
 }
